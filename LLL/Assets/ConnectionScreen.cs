@@ -47,7 +47,8 @@ public class ConnectionScreen : MonoBehaviour
 
    private void StartGame()
    {
-      SceneManager.LoadScene(1);
+      //SceneManager.LoadScene(1);
+      PhotonNetwork.LoadLevel(1);
    }
    IEnumerator statusCheck()
    {
@@ -58,7 +59,7 @@ public class ConnectionScreen : MonoBehaviour
          if (isMaster)
          {
             statusText.text = "Connected player " + PhotonNetwork.CurrentRoom.PlayerCount + "/4";
-            if (PhotonNetwork.CurrentRoom.PlayerCount > 2 && !startButton.gameObject.activeSelf)
+            if (PhotonNetwork.CurrentRoom.PlayerCount >= 2 && !startButton.gameObject.activeSelf)
             {
                startButton.gameObject.SetActive(true);
             }
