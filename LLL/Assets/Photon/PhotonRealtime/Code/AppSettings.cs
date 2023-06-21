@@ -12,7 +12,6 @@
 
 namespace Photon.Realtime
 {
-    using Photon.Realtime;
     using System;
     using ExitGames.Client.Photon;
 
